@@ -25,7 +25,8 @@ function simulateMatch(home, away, format) {
       const side = isHome ? 'home' : 'away';
 
       if (prob(0.08)) {
-        stats[side].shots++;
+        const extraShots = Math.floor(Math.random() * 3)
+        stats[side].shots += 1 + extraShots
         if (prob(0.30 + ratingDiff * 0.1)) {
           isHome ? goalsH++ : goalsA++;
           const scorer = rand(team.players);
